@@ -1,22 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, BookOpen } from 'lucide-react';
+import { GraduationCap, Calendar, BookOpen, Terminal } from 'lucide-react';
 import { educationData } from '../data/portfolio';
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-24 relative overflow-hidden">
+      {/* Background: bg-blue.jpg (fixed, covered, centered) with dark overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ backgroundImage: `url('/src/assets/bg-blue.jpg')` }}
+      />
+      <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />
+
+      {/* Top and Bottom Fades */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#05080f] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#05080f] to-transparent pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full card-glass border border-blue-500/30 text-xs font-semibold text-blue-400 mb-3 tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full cyber-card border border-[#00e5ff]/30 text-xs font-mono font-semibold text-[#00e5ff] mb-3 tracking-wider uppercase">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Academic Background</span>
+            <span>03 // ACADEMIC_RECORD</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Formal <span className="gradient-accent-text">Education</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+            Formal <span className="neon-gradient-text">Education</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-4" />
+          <div className="w-16 h-1 bg-gradient-to-r from-[#00e5ff] to-[#22ff88] rounded-full mt-4 shadow-[0_0_12px_rgba(0,229,255,0.6)]" />
         </div>
 
         {/* Education Card */}
@@ -28,24 +39,29 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="card-glass card-glass-hover p-8 sm:p-10 rounded-2xl border border-white/5 relative overflow-hidden group shadow-xl"
+              className="cyber-card-cyan p-8 sm:p-10 rounded-2xl relative overflow-hidden group shadow-2xl"
             >
-              {/* Left Accent Bar */}
-              <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-blue-600 via-indigo-600 to-purple-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+              {/* Left Accent Neon Line */}
+              <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-[#00e5ff] via-[#22ff88] to-purple-500 shadow-[0_0_15px_rgba(0,229,255,0.8)]" />
+
+              <div className="flex items-center gap-2 text-xs font-mono text-[#00e5ff] mb-3 pb-2 border-b border-white/5">
+                <Terminal className="w-3.5 h-3.5" />
+                <span>STUDENT_STATUS: ENROLLED</span>
+              </div>
 
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-[#00e5ff] transition-colors font-mono">
                     {edu.degree}
                   </h3>
                   <div className="text-base font-medium text-slate-300 mt-2 flex items-center gap-2">
-                    <BookOpen className="w-4 h-4 text-blue-400 shrink-0" />
+                    <BookOpen className="w-4 h-4 text-[#22ff88] shrink-0" />
                     <span>{edu.institution}</span>
                   </div>
                 </div>
 
                 <div className="shrink-0">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-[#00e5ff]/10 text-[#00e5ff] border border-[#00e5ff]/30 shadow-[0_0_10px_rgba(0,229,255,0.2)]">
                     <Calendar className="w-3.5 h-3.5" />
                     {edu.status}
                   </span>
@@ -53,7 +69,7 @@ export default function Education() {
               </div>
 
               {edu.description && (
-                <p className="text-sm text-slate-400 leading-relaxed mt-4 pt-4 border-t border-white/5">
+                <p className="text-sm text-slate-300 leading-relaxed mt-4 pt-4 border-t border-white/5">
                   {edu.description}
                 </p>
               )}

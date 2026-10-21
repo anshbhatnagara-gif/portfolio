@@ -3,69 +3,107 @@
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: #090d16;
-    color: #f1f5f9;
+    background-color: #05080f;
+    color: #e2e8f0;
   }
 
-  h1, h2, h3, h4, .font-heading {
-    font-family: var(--font-heading);
+  h1, h2, h3, h4, .font-heading, .font-code {
+    font-family: var(--font-mono);
   }
 }
 
-/* Glassmorphism and glow styles */
-.card-glass {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.card-glass-hover {
+/* Hacker / Cyberpunk Glows & Glassmorphism */
+.cyber-card {
+  background: rgba(8, 14, 24, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 255, 136, 0.12);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-glass-hover:hover {
-  border-color: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+.cyber-card:hover {
+  border-color: rgba(34, 255, 136, 0.4);
+  box-shadow: 0 0 25px -5px rgba(34, 255, 136, 0.2), inset 0 0 15px rgba(34, 255, 136, 0.05);
   transform: translateY(-2px);
 }
 
-.nav-glass {
-  background: rgba(9, 13, 22, 0.85);
+.cyber-card-cyan {
+  background: rgba(8, 14, 24, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(6, 182, 212, 0.14);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card-cyan:hover {
+  border-color: rgba(6, 182, 212, 0.45);
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.22), inset 0 0 15px rgba(6, 182, 212, 0.05);
+  transform: translateY(-2px);
+}
+
+.cyber-nav {
+  background: rgba(5, 8, 15, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(34, 255, 136, 0.15);
 }
 
-/* Gradient accents */
-.gradient-accent {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+/* Text glow utilities */
+.text-glow-green {
+  text-shadow: 0 0 12px rgba(34, 255, 136, 0.5), 0 0 24px rgba(34, 255, 136, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.5), 0 0 24px rgba(6, 182, 212, 0.2);
+}
+
+/* Neon Gradients */
+.neon-gradient-text {
+  background: linear-gradient(135deg, #22ff88 0%, #00e5ff 60%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-accent-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.neon-btn-green {
+  background: linear-gradient(135deg, #22ff88 0%, #00d26a 100%);
+  box-shadow: 0 0 20px rgba(34, 255, 136, 0.35);
+  color: #05080f;
+  transition: all 0.25s ease;
 }
 
-/* Custom scrollbar */
+.neon-btn-green:hover {
+  box-shadow: 0 0 30px rgba(34, 255, 136, 0.6);
+  transform: scale(1.02);
+}
+
+.neon-btn-outline {
+  border: 1px solid rgba(34, 255, 136, 0.4);
+  box-shadow: 0 0 15px rgba(34, 255, 136, 0.12);
+  transition: all 0.25s ease;
+}
+
+.neon-btn-outline:hover {
+  border-color: #22ff88;
+  box-shadow: 0 0 25px rgba(34, 255, 136, 0.35);
+  color: #22ff88;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #05080f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #162438;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #22ff88;
 }

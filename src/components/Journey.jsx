@@ -12,27 +12,38 @@ export default function Journey() {
   };
 
   return (
-    <section id="journey" className="py-24 relative bg-slate-950/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="journey" className="py-24 relative overflow-hidden">
+      {/* Background: bg-blue.jpg (fixed, covered, centered) with dark overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ backgroundImage: `url('/src/assets/bg-blue.jpg')` }}
+      />
+      <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />
+
+      {/* Top and Bottom Fades */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#05080f] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#05080f] to-transparent pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full card-glass border border-blue-500/30 text-xs font-semibold text-blue-400 mb-3 tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full cyber-card border border-[#22ff88]/30 text-xs font-mono font-semibold text-[#22ff88] mb-3 tracking-wider uppercase">
             <Milestone className="w-3.5 h-3.5" />
-            <span>Growth Path</span>
+            <span>04 // PROGRESS_LOG</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Developer <span className="gradient-accent-text">Journey</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+            Developer <span className="neon-gradient-text">Journey</span>
           </h2>
-          <p className="mt-3 text-slate-400 max-w-xl text-sm sm:text-base">
-            Milestones in continuous learning, problem solving, and technological expansion.
+          <p className="mt-3 text-slate-400 max-w-xl text-sm sm:text-base font-mono">
+            Chronological growth milestones in problem-solving and software engineering.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-4" />
+          <div className="w-16 h-1 bg-gradient-to-r from-[#22ff88] via-[#00e5ff] to-purple-500 rounded-full mt-4 shadow-[0_0_12px_rgba(34,255,136,0.6)]" />
         </div>
 
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Vertical central guide line (hidden on mobile, visible on sm+) */}
-          <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-indigo-600 to-transparent -translate-x-1/2 opacity-30" />
+          {/* Vertical central neon line */}
+          <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#22ff88] via-[#00e5ff] to-transparent -translate-x-1/2 opacity-40 shadow-[0_0_10px_rgba(34,255,136,0.5)]" />
 
           <div className="space-y-10 sm:space-y-12">
             {journeyData.map((item, idx) => {
@@ -52,32 +63,32 @@ export default function Journey() {
                 >
                   {/* Card Content */}
                   <div className="w-full sm:w-1/2">
-                    <div className="card-glass card-glass-hover p-6 sm:p-7 rounded-2xl border border-white/5 relative group">
+                    <div className="cyber-card p-6 sm:p-7 rounded-2xl relative group">
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#22ff88]/10 text-[#22ff88] border border-[#22ff88]/30 shadow-[0_0_10px_rgba(34,255,136,0.2)]">
                           {item.phase}
                         </span>
-                        <div className="w-8 h-8 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                        <div className="w-8 h-8 rounded-lg bg-[#22ff88]/10 border border-[#22ff88]/25 flex items-center justify-center text-[#22ff88] shadow-[0_0_10px_rgba(34,255,136,0.2)]">
                           <Icon className="w-4 h-4" />
                         </div>
                       </div>
 
-                      <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-[#22ff88] transition-colors mb-2 font-mono">
                         {item.title}
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
                         {item.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Central Node */}
-                  <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 rounded-full bg-slate-900 border-2 border-blue-500 shadow-lg shadow-blue-500/40 z-10">
-                    <div className="w-2.5 h-2.5 rounded-full bg-purple-400" />
+                  <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-8 h-8 rounded-full bg-[#05080f] border-2 border-[#22ff88] shadow-[0_0_15px_rgba(34,255,136,0.8)] z-10">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00e5ff] animate-pulse" />
                   </div>
 
-                  {/* Symmetrical Spacer for layout */}
+                  {/* Symmetrical Spacer */}
                   <div className="hidden sm:block w-1/2" />
                 </motion.div>
               );

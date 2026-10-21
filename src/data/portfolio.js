@@ -9,16 +9,24 @@ export const personalInfo = {
   tagline: "CSE Student | Aspiring Software Developer | AI/ML & Cybersecurity Enthusiast",
   intro: "A Computer Science Engineering student passionate about building modern web experiences, exploring Artificial Intelligence, and understanding Cybersecurity. I enjoy turning ideas into practical projects while continuously improving my programming and problem-solving skills. Currently learning, building, and growing one project at a time.",
   
+  // Rotating typing titles for Hero section
+  typingRoles: [
+    "CSE Student",
+    "Aspiring Software Developer",
+    "AI/ML Enthusiast",
+    "Cybersecurity Enthusiast"
+  ],
+
   // Profile photo configuration:
-  // If src/assets/profile.jpg exists, it will be loaded. Otherwise, a sleek AB initials avatar is displayed.
+  // Points to src/assets/profile.jpg; falls back gracefully to a neon AB avatar if not found.
   profileImage: "/src/assets/profile.jpg",
   
   // Resume configuration:
-  // Place your resume at public/resume.pdf to make it available for download.
   resumeUrl: "/resume.pdf",
 
   // Social & Contact links
   email: "anshbhatnagara@gmail.com",
+  gmailComposeUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=anshbhatnagara@gmail.com&su=Hello%20Ansh&body=Hi%20Ansh,",
   github: "https://github.com/anshbhatnagara-gif",
   linkedin: "https://www.linkedin.com/in/ansh-bhatnagar-557a9a389",
   location: "Kota, Rajasthan, India",
@@ -158,12 +166,14 @@ export const contactData = {
   heading: "Let's Build Something Together",
   text: "I'm always interested in learning new technologies, building meaningful projects, and connecting with people who enjoy creating things with code. Have a project idea, collaboration opportunity, or just want to connect? Feel free to reach out.",
   email: "anshbhatnagara@gmail.com",
+  gmailComposeUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=anshbhatnagara@gmail.com&su=Hello%20Ansh&body=Hi%20Ansh,",
   github: "https://github.com/anshbhatnagara-gif",
   linkedin: "https://www.linkedin.com/in/ansh-bhatnagar-557a9a389",
   location: "Kota, Rajasthan, India"
 };
 
 export const footerData = {
-  copyright: `© ${new Date().getFullYear()} Ansh Bhatnagar. All rights reserved.`,
-  tagline: "Designed & Built by Ansh Bhatnagar"
+  copyright: "© 2026 Ansh Bhatnagar",
+  tagline: "Designed & Built by Ansh Bhatnagar",
+  credit: "Background art: G.D.S.S.A. Gunasekara & Vaschito0000"
 };
