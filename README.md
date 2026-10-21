@@ -1,6 +1,8 @@
 # Ansh Bhatnagar - Personal Portfolio 2.0
 
-A modern, responsive, developer-focused portfolio website built with **React**, **Vite**, **Tailwind CSS v4**, **Framer Motion**, and **Lucide Icons**.
+> 🚀 **Live Deployment:** [https://portfolio2-0-has4cchle-anshbhatnagara-free-course.vercel.app/](https://portfolio2-0-has4cchle-anshbhatnagara-free-course.vercel.app/)
+
+A modern, responsive, developer-focused portfolio website built with **React**, **Vite**, **Tailwind CSS v4**, **Framer Motion**, and **Lucide Icons** featuring a **Cyber / Hacker Theme**.
 
 ---
 
