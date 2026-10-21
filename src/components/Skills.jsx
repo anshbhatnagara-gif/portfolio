@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Terminal, Globe, Wrench, BookOpen, Compass } from 'lucide-react';
 import { skillsData } from '../data/portfolio';
+import bgBlue from '../assets/bg-blue.jpg';
 
 export default function Skills() {
   const categoryIcons = {
@@ -17,7 +18,7 @@ export default function Skills() {
       {/* Background: bg-blue.jpg (fixed, covered, centered) with dark overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url('/src/assets/bg-blue.jpg')` }}
+        style={{ backgroundImage: `url(${bgBlue})` }}
       />
       <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />
 

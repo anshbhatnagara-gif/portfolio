@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { User, GraduationCap, Code, Rocket, Sparkles, Terminal } from 'lucide-react';
 import { aboutData, personalInfo } from '../data/portfolio';
+import bgBlue from '../assets/bg-blue.jpg';
 
 export default function About() {
   const [imageError, setImageError] = useState(false);
@@ -18,7 +19,7 @@ export default function About() {
       {/* Background: bg-blue.jpg with fixed position, dark overlay & subtle blur */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url('/src/assets/bg-blue.jpg')` }}
+        style={{ backgroundImage: `url(${bgBlue})` }}
       />
       <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />
 

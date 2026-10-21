@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight, Github, Linkedin, Mail, Terminal } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
+import bgGreen from '../assets/bg-green.jpg';
 import CyberMatrixCanvas from './CyberMatrixCanvas';
 
 export default function Hero() {
@@ -46,7 +47,7 @@ export default function Hero() {
       {/* Background Image: bg-green.jpg (fixed, covered, centered) with dark overlay & slight blur */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url('/src/assets/bg-green.jpg')` }}
+        style={{ backgroundImage: `url(${bgGreen})` }}
       />
       {/* Dark Overlay (rgba(5,8,15,0.80)) + blur to protect readability */}
       <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />

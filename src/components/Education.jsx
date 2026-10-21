@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, BookOpen, Terminal } from 'lucide-react';
 import { educationData } from '../data/portfolio';
+import bgBlue from '../assets/bg-blue.jpg';
 
 export default function Education() {
   return (
@@ -9,7 +10,7 @@ export default function Education() {
       {/* Background: bg-blue.jpg (fixed, covered, centered) with dark overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url('/src/assets/bg-blue.jpg')` }}
+        style={{ backgroundImage: `url(${bgBlue})` }}
       />
       <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />
 

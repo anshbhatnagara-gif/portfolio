@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, MapPin, Github, Linkedin, Send, CheckCircle2, AlertCircle, Loader2, Copy, Check, ExternalLink } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { contactData, personalInfo } from '../data/portfolio';
+import bgGreen from '../assets/bg-green.jpg';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -90,7 +91,7 @@ export default function Contact() {
       {/* Background: bg-green.jpg (fixed, covered, centered) with dark overlay & subtle blur */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url('/src/assets/bg-green.jpg')` }}
+        style={{ backgroundImage: `url(${bgGreen})` }}
       />
       <div className="absolute inset-0 bg-[#05080f]/85 backdrop-blur-[2px]" />
 
